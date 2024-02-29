@@ -1,5 +1,7 @@
+import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { MiniBanners } from "./components/MiniBanners";
+import { Movements } from "./components/Movements";
 import { Options } from "./components/Options";
 import { Services } from "./components/Services";
 
@@ -10,6 +12,8 @@ function App () {
       <Options />
       <MiniBanners />
       <Services />
+      <Movements />
+      <Footer />
     </>
   )
 }
