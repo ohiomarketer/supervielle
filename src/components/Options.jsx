@@ -4,33 +4,28 @@ import { styled } from 'styled-components';
 
 export const Options = () => {
     const [open, setOpen] = useState(false);
-    const handleOpen = () => {
-        setOpen(!open);
-    };
 
-    const handleToggleToast = () => {
+    const handleOpen = () => {
         setOpen(!open);
     };
 
     const handleClose = () => {
         setOpen(false);
     };
-    
+
     return (
         <>
             <OptionsContainer onClick={handleOpen}>
                 <img src={optionsimage} alt="" />
             </OptionsContainer>
-            {open && (
-                <ToastContainer>
-                    <Toast>
-                        <SlideClose />
-                        <p className="title">En este momento no podemos ofrecerte este servicio</p>
-                        <p className="description">Todavía no cuentas con una cuenta Supervielle. No es posible continuar con esta operación.</p>
-                        <button onClick={handleClose}>Cerrar</button>
-                    </Toast>
-                </ToastContainer>
-            )}
+            <ToastContainer open={open}>
+                <Toast className={open ? 'active' : ''}>
+                    <SlideClose />
+                    <p className="title">En este momento no podemos ofrecerte este servicio</p>
+                    <p className="description">Todavía no cuentas con una cuenta Supervielle. No es posible continuar con esta operación.</p>
+                    <button onClick={handleClose}>Cerrar</button>
+                </Toast>
+            </ToastContainer>
         </>
     );
 };
@@ -53,12 +48,14 @@ const ToastContainer = styled.div`
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: ${({ open }) => (!open ? '100%' : '0')};
+    height: 100%;
+    opacity: ${({ open }) => (open ? '1' : '0')};
+    transform: translateY(${({ open }) => (open ? '0%' : '100%')});
     display: flex;
     justify-content: center;
     align-items: flex-end;
     z-index: 9999;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease;
 `;
 
 const Toast = styled.div`
@@ -71,8 +68,11 @@ const Toast = styled.div`
     align-items: center;
     padding: 10px;
     border-radius: 15px 15px 0px 0px;
-    transform: translateY(${({ open }) => (!open ? '0%' : '100%')});
-    transition: all 0.3s ease;
+    transform: translateY(${({ open }) => (open ? '0%' : '100%')});
+    transition: transform 0.3s ease;
+    &.active {
+        transform: translateY(0%);
+    }
 
     .title {
         text-align: center;
