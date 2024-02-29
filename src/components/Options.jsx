@@ -69,7 +69,7 @@ const Toast = styled.div`
     padding: 10px 20px;
     border-radius: 15px 15px 0px 0px;
     transform: translateY(${({ open }) => (open ? '0%' : '100%')});
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
     &.active {
         transform: translateY(0%);
     }
