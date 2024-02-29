@@ -1,3 +1,4 @@
+import { Amount } from "./components/Amount";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { MiniBanners } from "./components/MiniBanners";
@@ -9,6 +10,7 @@ function App () {
   return (
     <>
       <Header />
+      <Amount />
       <Options />
       <MiniBanners />
       <Services />
