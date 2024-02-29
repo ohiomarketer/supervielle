@@ -95,7 +95,6 @@ const Toast = styled.div`
         background: #e5e4e9;
         font-size: 14px;
         width: 100%;
-        cursor: pointer;
     }
 `;
 
