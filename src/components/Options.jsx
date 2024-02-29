@@ -66,7 +66,7 @@ const Toast = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 15px 15px 0px 0px;
     transform: translateY(${({ open }) => (open ? '0%' : '100%')});
     transition: transform 0.3s ease;
@@ -94,7 +94,7 @@ const Toast = styled.div`
         border-radius: 5px;
         background: #e5e4e9;
         font-size: 14px;
-        width: 95%;
+        width: 100%;
         cursor: pointer;
     }
 `;
