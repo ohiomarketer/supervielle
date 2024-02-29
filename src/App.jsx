@@ -10,7 +10,6 @@ function App () {
   return (
     <>
       <Header />
-      <Amount />
       <Options />
       <MiniBanners />
       <Services />
