@@ -50,12 +50,14 @@ const ToastContainer = styled.div`
     width: 100%;
     height: 100%;
     opacity: ${({ open }) => (open ? '1' : '0')};
-    transform: translateY(${({ open }) => (open ? '0%' : '100%')});
     display: flex;
     justify-content: center;
     align-items: flex-end;
     z-index: 9999;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease; /* Only opacity transition */
+
+    /* Ensure Toast is hidden when closed */
+    pointer-events: ${({ open }) => (open ? 'auto' : 'none')};
 `;
 
 const Toast = styled.div`
@@ -69,7 +71,7 @@ const Toast = styled.div`
     padding: 10px 20px;
     border-radius: 15px 15px 0px 0px;
     transform: translateY(${({ open }) => (open ? '0%' : '100%')});
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease; /* Added transform transition */
     &.active {
         transform: translateY(0%);
     }
