@@ -44,7 +44,7 @@ const OptionsContainer = styled.div`
 `;
 
 const ToastContainer = styled.div`
-    background: #8686862d;
+    background: #8686863f;
     position: fixed;
     bottom: 0;
     width: 100%;
