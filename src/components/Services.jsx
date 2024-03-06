@@ -1,5 +1,5 @@
 import React from 'react'
-import servicesimage from '../assets/static/servicios2.png'
+import servicesimage from '../assets/static/servicios3.png'
 import { styled } from 'styled-components';
 
 export const Services = () => {
